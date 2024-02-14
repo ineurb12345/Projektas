@@ -12,7 +12,7 @@ const GET_ALL_QUESTIONS = async (req, res) => {
 
 const GET_ALL_QUESTIONS_BY_USER = async (req, res) => {
   try {
-    const question = await ResourceModel.find({ userId: req.body.userId });
+    const question = await ResourceModel.find({ userId: req.params.userId });
     return res.status(200).json({ questions: question });
   } catch (err) {
     console.log(err);
